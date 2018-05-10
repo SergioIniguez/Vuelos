@@ -179,24 +179,34 @@ public class Main {
 				}
 				break;
 			case 4:
+				int x=1;
+				System.out.println("Selecciona el pasajero para imprimir su Ticket");
+				for(Pasajero i:listaPasajeros) {
+					System.out.println(x+".- "+i.getNombre());
+					x++;
+				}
+				leer.nextLine();
+				int sel = Integer.parseInt(leer.nextLine());
+				Pasajero pass = listaPasajeros.get(sel-1);
+				System.out.println("Nombre: " + pass.getNombre() + "\n" + "DNI: " + pass.getDNI() + "\n" + "Fecha de nacimiento: " + 
+						pass.getFecha_nac() + "\n" + "Edad: " + pass.getEdad() + "\n" + "Correo: " + pass.getCorreo());			
+				System.out.println("Alianza: " + pass.vuelo.getAlianza() + "\n" + "ID: " + pass.vuelo.getId() + "\n" + "Aeropuerto de Salida: " + 
+						pass.vuelo.getSaleDe() + "\n" + "Hora de Salida: " + pass.vuelo.getHoraSale() + "\n" + "Aeropuerto de Llegada: " + pass.vuelo.getLlegaA() 
+						+ "\n" + "Hora de Llegada: " + pass.vuelo.getHoraLlega());				
 				break;
 			case 5://Información del Vuelo
 				System.out.println("Lista de Pasajeros");
 				for(Pasajero i:listaPasajeros) {
-					System.out.println("Nombre: " + i.getNombre() + "\n" + ", DNI: " + i.getDNI() + "\n" + ", Fecha de nacimiento: " + 
-							i.getFecha_nac() + "\n" + ", Edad: " + i.getEdad() + "\n" + ", Correo: " + i.getCorreo());			
-					System.out.println("Alianza: " + i.vuelo.getAlianza() + "\n" + ", ID: " + i.vuelo.getId() + "\n" + ", Aeropuerto de Salida: " + 
-							i.vuelo.getSaleDe() + "\n" + ", Hora de Salida: " + i.vuelo.getHoraSale() + "\n" + ", Aeropuerto de Llegada: " + i.vuelo.getLlegaA() 
-							+ "\n" + ", Hora de Llegada: " + i.vuelo.getHoraLlega());
+					System.out.println("Nombre: " + i.getNombre());
 				}
 				
 				System.out.println("Lista de Tripulantes");
 				for(Tripulacion i:listaTripulantes) {
-					System.out.println("Nombre: " + i.getNombre() + ", DNI: " + i.getDNI() + ", Fecha de nacimiento: " + 
-							i.getFecha_nac() + ", Edad: " + i.getEdad() + ", Correo: " + i.getNSS());	
-					System.out.println("Alianza: " + i.vuelo.getAlianza() + "\n" + ", ID: " + i.vuelo.getId() + "\n" + ", Aeropuerto de Salida: " + 
-							i.vuelo.getSaleDe() + "\n" + ", Hora de Salida: " + i.vuelo.getHoraSale() + "\n" + ", Aeropuerto de Llegada: " + i.vuelo.getLlegaA() 
-							+ "\n" + ", Hora de Llegada: " + i.vuelo.getHoraLlega());
+					System.out.println("Nombre: " + i.getNombre() + "DNI: " + i.getDNI() + "Fecha de nacimiento: " + 
+							i.getFecha_nac() + "Edad: " + i.getEdad() + "Correo: " + i.getNSS());	
+					System.out.println("Alianza: " + i.vuelo.getAlianza() + "\n" + "ID: " + i.vuelo.getId() + "\n" + "Aeropuerto de Salida: " + 
+							i.vuelo.getSaleDe() + "\n" + "Hora de Salida: " + i.vuelo.getHoraSale() + "\n" + "Aeropuerto de Llegada: " + i.vuelo.getLlegaA() 
+							+ "\n" + "Hora de Llegada: " + i.vuelo.getHoraLlega());
 				}
 				
 				System.out.println("Lista de Vuelos");
